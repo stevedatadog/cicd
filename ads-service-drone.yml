@@ -1,0 +1,16 @@
+kind: pipeline
+name: default
+
+steps:
+  #  - name: test
+  #    image: python
+  #    commands:
+  #      - pip install pytest
+  #      - pytest
+  - name: docker
+    image: plugins/docker
+    settings:
+      username: labuser
+      repo: registry:5000/labuser/ads-service
+      registry: registry:5000
+      insecure: true
